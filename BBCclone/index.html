@@ -176,10 +176,13 @@
 
     .newsItem a{
       color:#1F4F82;
+    }
+
+    a{
       text-decoration:none;
     }
 
-    .newsItem a:hover{
+    a:hover{
       text-decoration:underline;
     }
 
@@ -206,9 +209,18 @@
     #watchListen{
       background-color:#EEEEEE;
       float:right;
-      width:300px;
+      width:330px;
       position:relative;
       top:-60px;
+    }
+
+    #watchListen li{
+      list-style:none;
+      position:relative;
+      background-image:url("images/live.png");
+      background-repeat:no-repeat;
+      background-position:left center;
+      padding:2px 0 5px 10px;
     }
 
     h2{
@@ -226,8 +238,34 @@
     .leftarrow{
       float:left;
       border-right:1px solid white;
-      height:150px;
+      position:relative;
+      height:126px;
     }
+
+    .rightarrow{
+      float:right;
+      border-left:1px solid white;
+      position:relative;
+      height:126px;
+
+    }
+
+    .wlblock{
+      float:left;
+      background-color:#D1700E;
+      width:140px;
+      border-right:1px solid white;
+    }
+
+    .wlblock a{
+      color:white;
+    }
+
+    .wlblock p{
+      margin:7px 10px 7px 10px;
+    }
+
+
 
     </style>    
 </head>
@@ -317,7 +355,7 @@
 
         <h1>Pollution to spread across England</h1>
 
-        <img class="headlineImage" src="images/headline.jpg" width="400" />
+        <img class="headlineImage" src="images/headline.png" width="400" />
 
         <div class="newsItem">
 
@@ -342,15 +380,36 @@
           <h2>Watch/Listen</h2>
 
           <img src="images/left_arrow.png" class="leftarrow" />
+
+          <div class="wlblock">
+
+            <img class="pix" src="images/pic1.png"/>
+
+            <p><a href="#">Urgent calls to tackle childhood obesity</a></p>
+
+          </div>
+
+          <div class="wlblock">
+
+            <img class="pix" src="images/pic2.png"/>
+
+            <p><a href="#">Pickleball: A sport for all ages</a></p>
+
+          </div>
+
+          <img src="images/right_arrow.png" class="rightarrow" />
+
+          <ul>
+
+            <li><a href="#">BBC News Channel Live</li>
+
+            <li><a href="#">Radio 5 live</li>
+
+            <li><a href="#">Osborne questioned on budget</li>
+
+          </ul>
           
-
-
-
-
         </div>
-
-
-        
         
       </div>
       
