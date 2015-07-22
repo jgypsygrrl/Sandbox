@@ -5,6 +5,31 @@
   <title>Bootstrap Landing Page | Jennifer's Sandbox</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <style>
+
+  #home {
+    background-color:#1abc9c;
+  }
+
+  #about {
+    background-color:#f1c40f;
+  }
+
+  #download {
+    background-color:#3498db;
+  }
+
+  .contentDiv {
+    text-align:center;
+    height: 800px;
+    width:100%;
+  }
+
+  .navbar-brand {
+    font-size: 1.8em;
+  }
+
+  </style>
   
 </head>
 <body>
@@ -13,25 +38,56 @@
     <div class="navbar navbar-default">
       <div class="container">
         
-        <div class="navbar-header">
-          <a href="" class="navbar-brand">My Website</a>
+        <div class="navbar-header">       
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <a href="" class="navbar-brand">myApp</a>
         </div>
         
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="">Page 1</a></li>
-            <li><a href="">Page 2</a></li>
-            <li><a href="">Page 3</a></li>
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#download">Download</a></li>
           </ul>
+
+          <!--- Sign-up form start-->
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="email" placeholder="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control" />
+            </div>
+            <button type="submit" class="btn-success">Log In </button>
+          </form>
+
+
+
         </div>
       </div>
     </div><!--end collapsible navbar-->
+
+    <!-- start body container -->
+    <div class="container">
+
+      <div id="home" class="contentDiv">
+        <h2>Home</h2>
+      </div>
+      
+      <div id="about" class="contentDiv">
+        <h2>About</h2>
+      </div>
+      
+      <div id="download" class="contentDiv">
+        <h2>Download</h2>
+      </div>
+
+    </div><!-- end body containr -->
 
 
 
