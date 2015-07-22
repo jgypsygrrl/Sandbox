@@ -5,62 +5,65 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How many fingers? - Jennifer's Sandbox</title>
-  <!-- Latest compiled and minified CSS -->
   <link href="../css/bootstrap.css" rel="stylesheet">
+
+  <style>
+
+    .large {
+      font-size: 1000%;
+      color: #e67e22;
+    }
+
+    #form {
+      padding: 5px 0 50px 0;
+    }
+
+  </style>
 </head>
 <body>
 
   <!-- collapsible navbar -->
   <div class="navbar navbar-default">
-
     <div class="container">
-
       <div class="navbar-header">
-
         <a href="http://jennifergapay.com/sandbox/" class="navbar-brand">Sandbox</a>
-
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
-
         </button>
-
       </div>
-
       <div class="collapse navbar-collapse">
-
         <ul class="nav navbar-nav">
           <li><a href="http://jennifergapay.com">Back to Main</a></li>
         </ul>
-
       </div>
-
     </div>
-
   </div>
-
   <!-- end navbar -->
 
   <!-- header -->
-  <div class="page-header" class="text-center">
-    <h1>How many fingers am I holding up? <small>A little experiment with javascript.</small> <a class="btn btn-default" href="https://github.com/jgypsygrrl/CodeTestr" target="blank" role="button">View on Github &raquo;</a></h1>
-
+  <div class="page-header text-center">
+    <h1>How many fingers am I holding up? </br><small>A little experiment with javascript.</small> <a class="btn btn-default" href="https://github.com/jgypsygrrl/CodeTestr" target="blank" role="button">View Code &raquo;</a></h1>
   </div>
   <!-- end header -->
-  <!-- body wrapper -->
 
-  <div class="wrapper">
+  <!-- body container -->
+  <div class="container text-center">
 
-    <input id="answer" />
-    <button id="myButton">Submit</button>
-  
-  <!--end wrapper-->
+    <div id="form">
+      <input id="answer" />
+      <button id="myButton">Submit</button></br>
+    </div>
 
+    <span class="glyphicon glyphicon glyphicon-hand-up large" aria-hidden="true"></span> 
 
+  </div> 
+
+  <!--end body-->
+
+  <!--scripts-->
+  <script src="./js/javascript.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-  <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </body>

@@ -141,6 +141,28 @@ body {
       font-size:0.75em;
     }
 
+    .footer {
+      background: #66cccc;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 50px;
+      text-align: center;
+      margin-top: 10px;
+      margin-left: 5px;
+      line-height: 50px;
+    }
+
+    .footer a {
+      color:#fff;
+      padding-right: 50px;
+    }
+
+    .footer a:hover {
+      color:#3692b9;
+    }
+
     .date{
       font-weight:bold;
     }
