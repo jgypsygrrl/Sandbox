@@ -20,9 +20,35 @@
 
   #topContainer {
     background-image:url("images/topImage.jpg");
-
     height:400px;
     width:100%;
+    background-size:cover;
+  }
+
+  #topRow {
+    margin-top:200px;
+    text-align: center;
+  }
+
+  #topRow h1 {
+    font-size:300%;
+  }
+
+  .bold {
+    font-weight:bold;
+  }
+
+  .marginTop {
+    margin-top:30px;
+  }
+
+  .center {
+    text-align:center;
+  }
+
+  .title {
+    margin-top:100px;
+    font-size: 300%;
   }
 
 
@@ -62,29 +88,52 @@
             </div>
             <button type="submit" class="btn-success">Log In </button>
           </form>
-
-
-
         </div>
       </div>
     </div><!--end collapsible navbar-->
 
-    <!-- start body container -->
-    <div class="container" id="topContainer">
+    <!-- start Home -->
+    <div class="container contentContainer" id="topContainer">
 
-      <div id="home" class="contentDiv">
-        <h2>Home</h2>
-      </div>
+      <div class="col-md-6 col-md-offset-3" id="topRow">
+
+        <h1 class="marginTop">My Awesome App</h1>
+
+          <p class="lead">This is why you need this fantastic app.</p>
+
+          <p>More information about the app.  More detail here.</p>
+
+          <p class="bold marginTop">Interested? Join our mailing list!</p>
+
+          <form class="marginTop">
+
+            <div class="input-group">
+
+              <span class="input-group-addon">@</span>
+
+              <input type="email" class="form-control" placeholder="Your email" />
+
+            </div>
+
+            <input type="submit" class="btn btn-success btn-lg marginTop" />
+
+          </form>
       
-      <div id="about" class="contentDiv">
-        <h2>About</h2>
-      </div>
-      
-      <div id="download" class="contentDiv">
-        <h2>Download</h2>
       </div>
 
-    </div><!-- end body containr -->
+    </div><!-- end home -->
+
+    <!-- About start -->
+    <div class="contentContainer">
+
+      <div class="row" class="center">
+
+        <h1 class="center title">Why This App is Awesome</h1>
+
+      </div>
+
+
+    </div> <!-- end About -->
 
 
 
@@ -95,8 +144,8 @@
 
   <!-- adjust image height for top container -->
   <script>
-
-    $("#topContainer").css("height",$(window).height());
+    //changed to min-height to adjust better to other devices
+    $(".contentContainer").css("min-height",$(window).height());
 
   </script>
 </body>
