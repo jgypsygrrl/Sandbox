@@ -9,13 +9,16 @@
 
   <style>
 
-    .large {
-      font-size: 1000%;
-      color: #e67e22;
+    #box {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    display:none;
+    position:relative;
     }
 
-    #form {
-      padding: 5px 0 50px 0;
+    h4 {
+      color:#66cccc;
     }
 
   </style>
@@ -43,15 +46,18 @@
 
   <!-- header -->
   <div class="page-header text-center">
-    <h1>How quick are you?? </br><small>A little experiment with javascript.</small> <a class="btn btn-default" href="#" target="blank" role="button">View Code - soon! &raquo;</a></h1>
+    <h1>How quick are you?? </br>
+      <small>A little experiment with javascript.</small> <a class="btn btn-default" href="https://github.com/jgypsygrrl/Sandbox/tree/master/js-responsetime" target="_blank" role="button">View Code! &raquo;</a></h1>
   </div>
   <!-- end header -->
 
   <!-- body container -->
     <div class="container text-center">
 
-
-
+      <div class ="lead">Click on the boxes and circles as quick as you can!</div>
+      <h4>Your Time: <span id="time">0</span>s</p></h4>
+        
+        <div id="box"</div>
 
     </div>
   <!--end body container-->
