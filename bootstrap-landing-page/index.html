@@ -7,17 +7,6 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <style>
 
-  #home {
-    background-color:#1abc9c;
-  }
-
-  #about {
-    background-color:#f1c40f;
-  }
-
-  #download {
-    background-color:#3498db;
-  }
 
   .contentDiv {
     text-align:center;
@@ -29,13 +18,21 @@
     font-size: 1.8em;
   }
 
+  #topContainer {
+    background-image:url("images/topImage.jpg");
+
+    height:400px;
+    width:100%;
+  }
+
+
   </style>
   
 </head>
 <body>
   
   <!--collapsible navbar-->
-    <div class="navbar navbar-default">
+    <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         
         <div class="navbar-header">       
@@ -73,7 +70,7 @@
     </div><!--end collapsible navbar-->
 
     <!-- start body container -->
-    <div class="container">
+    <div class="container" id="topContainer">
 
       <div id="home" class="contentDiv">
         <h2>Home</h2>
@@ -95,5 +92,12 @@
   <!-- jQuery & bootstrap scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <!-- adjust image height for top container -->
+  <script>
+
+    $("#topContainer").css("height",$(window).height());
+
+  </script>
 </body>
 </html>
