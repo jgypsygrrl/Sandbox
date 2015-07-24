@@ -51,13 +51,41 @@
     font-size: 300%;
   }
 
+  #downloadSection {
+    background-color:#f1c40f;
+    color: white;
+    width:100%;
+  }
+
+  #downloadSection img {
+    width:400px;
+  }
+
+  #footer {
+    background-color:white;
+    height:30px;
+    width:100%;
+    margin-top:10px;
+    color:#7f8c8d;
+  }
+
+  .marginBottom {
+    margin-bottom: 30px;
+  }
+
+/* TIP below to see all borders 
+  div {
+    border: 1px solid #000000;
+}*/
+
 
   </style>
   
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar-collapse">
   
-  <!--collapsible navbar-->
+<!-- ========== start NAVBAR ========== -->
+
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         
@@ -77,10 +105,10 @@
             <li class="active"><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#download">Download</a></li>
-            <li><a href="#sandbox">Back to Sandbox</a></li>
+            <!-- <li><a href="#sandbox">Back to Sandbox</a></li> -->
           </ul>
 
-          <!--- Sign-up form start-->
+          <!--- start SIGNIN right justified -->
           <form class="navbar-form navbar-right">
             <div class="form-group">
               <input type="email" placeholder="Email" class="form-control" />
@@ -92,15 +120,15 @@
           </form>
         </div>
       </div>
-    </div><!--end collapsible navbar-->
+    </div>
 
-    <!-- start Home -->
+<!-- ========== start HOME ========== -->
+
     <div class="container contentContainer" id="topContainer">
 
       <div class="col-md-6 col-md-offset-3" id="topRow">
 
         <h1 class="marginTop">myApp</h1>
-
           <p class="lead">This is why you need this fantastic app.</p>
           <p>It will save your life.  No, seriously.</p>
           <p class="bold marginTop">Interested? Join our mailing list!</p>
@@ -112,33 +140,75 @@
             </div>
             <input type="submit" class="btn btn-success btn-lg marginTop" />
           </form>
-      
+
       </div>
 
-    </div><!-- end home container-->
+    </div>
 
-    <!-- About start -->
-    <div class="content contentContainer">
+<!-- ========== start ABOUT ========== -->
 
-      <div class="row" class="center">
+    <div class="container contentContainer">
+
+      <div class="row" class="center" id="about">
+
         <h1 class="center title">Why This App is Awesome</h1>
-        <p class="lead center">Summary of myApp's awesomeness</p>
+          <p class="lead center">Summary of myApp's meaty awesomeness</p>
+
+      </div>
+
+      <div class="row marginBottom">
+
+        <div class="col-md-4 text-justify marginTop">
+          <h2><span class="glyphicon glyphicon-glass" aria-hidden="true"</span>Title</h2>
+            <p>Bacon ipsum dolor amet turducken shankle qui occaecat, ribeye ham excepteur non. Laboris in cupim, tri-tip pork frankfurter nulla id voluptate do et hamburger. Sunt cow excepteur laborum et. Dolore jerky ham landjaeger, prosciutto dolore strip steak ball tip capicola. </p>  
+          <button class="btn btn-warning marginTop">Sign up!</button>
+        </div>
+      
+        <div class="col-md-4 text-justify marginTop">
+          <h2><span class="glyphicon glyphicon-plane" </span>Title</h2>
+            <p>Bacon ipsum dolor amet andouille capicola drumstick pig beef, ground round pastrami. Pastrami kevin jerky pork sirloin ham fatback tail tongue leberkas filet mignon short ribs sausage cupim kielbasa. Bresaola turkey capicola tongue cupim drumstick cow sirloin kielbasa pig fatback.  </p> 
+            <button class="btn btn-warning marginTop">Sign up!</button>
+          </div>
+
+        <div class="col-md-4 text-justify marginTop">
+          <h2><span class="glyphicon glyphicon-music" aria-hidden="true"</span>Title</h2>
+            <p>Bacon ipsum dolor amet capicola cillum pig, ribeye ut eu eiusmod. Ham hock beef ribs nisi chicken drumstick. Dolore aliqua meatball, bresaola culpa aute capicola cow tri-tip voluptate porchetta pork loin landjaeger. Ham mollit in dolore minim tenderloin.  Ullamco mollit dolor.</p>
+            <button class="btn btn-warning marginTop">Sign up!</button>
+        </div>
+
+      </div>
+
+    </div><!--end CONTAINER -->
+
+<!-- ========== start DOWNLOAD ========== -->
+  
+    <div class="container contentContainer" id="downloadSection">
+
+      <div class="row topRow marginBottom" id="download">
+        <h1 class="center title">Download myApp</h1>
+          <p class="lead center">It's free!  What are you waiting for?</p>
       </div>
 
       <div class="row">
-        <div class="col-md-4">
-          <h2>Title</h2>
-          A brief description of one of the best features of the app.  A brief description of one of the best features of the app.  
-          <button class="btn btn-success marginTop">Sign up!</button>
+        <div class="col-md-6 marginBottom">
+            <a href="#download"><img src="./images/available_apple.png" class="img-responsive center-block"></a>
         </div>
-      </div><!--end Row-->
+        
+        <div class="col-md-6">
+            <a href="#download"><img src="./images/available_gplay.png" class="img-responsive center-block"></a>
+        </div>
+      </div>
 
-    </div> <!-- end About -->
+    </div><!-- end container -->
+
+    <div class="container" id="footer">
+      <p class="center">myApp &copy;2015.  All rights reserved.</p>
+    </div>
 
 
 
+<!-- ========== start SCRIPTS ========== -->
 
-  <!-- jQuery & bootstrap scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
@@ -147,5 +217,6 @@
     //changed to min-height adjust to smaller devices
     $(".contentContainer").css("min-height",$(window).height());
   </script>
+
 </body>
 </html>
