@@ -26,7 +26,7 @@
   }
 
   #topRow {
-    margin-top:200px;
+    margin-top:125px;
     text-align: center;
   }
 
@@ -105,7 +105,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#download">Download</a></li>
-            <li><a href="#sandbox">Back to Sandbox</a></li>
+            <li><a href="http://jennifergapay.com/sandbox/">Back to Sandbox</a></li>
           </ul>
 
           <!--- start SIGNIN right justified -->
@@ -212,10 +212,56 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-  <!-- adjust image height for top container -->
+  <!-- ========== adjust image height for top container ========== -->
   <script>
     //changed to min-height adjust to smaller devices
     $(".contentContainer").css("min-height",$(window).height());
+  </script>
+
+
+  <!-- ========== transparent navbar ========== -->
+  <script>
+   
+   // transparent navbar
+      $(document).on('scroll', function (e) {
+       $('.navbar').css('opacity', ($(document).scrollTop() / 500));
+    });
+    
+    // photo cover entire height
+      $(".contentContainer").css("min-height",$(window).height());
+   
+   // scroll spy - offset to nav by links w/ fixed navbar
+      var offsetHeight = 100;
+
+        $('body').scrollspy({
+            offset: offsetHeight
+        });
+
+        $('.navbar li a').click(function (event) {
+            var scrollPos = $('body > .container').find($(this).attr('href')).offset().top - (offsetHeight - 1);
+            $('body,html').animate({
+                scrollTop: scrollPos
+            }, 500, function () {
+                $(".btn-navbar").click();
+            });
+            return false;
+        });
+    
+    // hamburger collapse after click
+      $(function(){
+
+      $('.nav a').on('click',function(){
+
+        if($('.navbar-toggle').css('display')!='none'){
+
+          $(".navbar-toggle").trigger("click");
+
+        }
+
+      });
+
+    });
+    
   </script>
 
 </body>
