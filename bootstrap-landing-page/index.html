@@ -229,23 +229,6 @@
     
     // photo cover entire height
       $(".contentContainer").css("min-height",$(window).height());
-   
-   // scroll spy - offset to nav by links w/ fixed navbar
-      var offsetHeight = 100;
-
-        $('body').scrollspy({
-            offset: offsetHeight
-        });
-
-        $('.navbar li a').click(function (event) {
-            var scrollPos = $('body > .container').find($(this).attr('href')).offset().top - (offsetHeight - 1);
-            $('body,html').animate({
-                scrollTop: scrollPos
-            }, 500, function () {
-                $(".btn-navbar").click();
-            });
-            return false;
-        });
     
     // hamburger collapse after click
       $(function(){
