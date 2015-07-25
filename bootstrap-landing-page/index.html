@@ -18,7 +18,7 @@
     font-size: 1.8em;
   }
 
-  #topContainer {
+  .topContainer {
     background-image:url("images/topImage.jpg");
     height:400px;
     width:100%;
@@ -97,15 +97,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="" class="navbar-brand">myApp</a>
+          <a href="#" class="navbar-brand">myApp</a>
         </div>
         
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#download">Download</a></li>
-            <!-- <li><a href="#sandbox">Back to Sandbox</a></li> -->
+            <li><a href="#sandbox">Back to Sandbox</a></li>
           </ul>
 
           <!--- start SIGNIN right justified -->
@@ -124,10 +124,9 @@
 
 <!-- ========== start HOME ========== -->
 
-    <div class="container contentContainer" id="topContainer">
+    <div class="container contentContainer topContainer" id="home">
 
       <div class="col-md-6 col-md-offset-3" id="topRow">
-
         <h1 class="marginTop">myApp</h1>
           <p class="lead">This is why you need this fantastic app.</p>
           <p>It will save your life.  No, seriously.</p>
@@ -197,6 +196,7 @@
         <div class="col-md-6">
             <a href="#download"><img src="./images/available_gplay.png" class="img-responsive center-block"></a>
         </div>
+
       </div>
 
     </div><!-- end container -->
