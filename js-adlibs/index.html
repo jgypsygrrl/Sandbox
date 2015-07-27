@@ -8,6 +8,16 @@
   <link href="../css/bootstrap.css" rel="stylesheet">
   <link href="../css/custom.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <style>
+    #myButton {
+      margin-top: 10px;
+    }
+
+    #myForm {
+      margin: 0 auto;
+      width:30%; 
+    }
+  </style>
 </head>
 <body>
 
@@ -49,9 +59,28 @@
   <!-- body container -->
   <div class="container text-center">
 
-    
-    
+    <div id="form">
 
+    <h3> Fill in the forms below:</h3>
+
+      <div class="form-group" id="myForm">
+
+        <label for="adjective"></label>
+          <input type="text" class="form-control" id="adjectiveAnswer" placeholder="add adjective here">
+
+        <label for="verb"></label>
+          <input type="text" class="form-control" id="verbAnswer" placeholder="add verb here">
+
+        <label for="noun"></label>
+          <input type="text" class="form-control" id="nounAnswer" placeholder="add noun here">
+
+      <button type="submit" class="btn btn-default" id="myButton">Let's Play</button>
+
+      </div>
+
+    </div>
+
+  </div>
   <!--end body-->
 
   <!--scripts-->
