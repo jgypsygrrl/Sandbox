@@ -67,6 +67,7 @@
       border:1px solid gray;
       border-radius:10px;
       margin-top:20px;
+      margin-bottom:20px;
     }
 
     #myForm {
@@ -139,22 +140,22 @@
 
           <div class="form-group">
 
-            <label for="name">Your Name</label>
-            <input type="text" name="name" class="form-control" placeholder="Your Name"/>
+              <label for="name">Your Name</label>
+              <input type="text" name="name" class="form-control" placeholder="Your Name" value="<?php echo $_POST['name']; ?>"/>
 
           </div>
 
           <div class="form-group">
 
-            <label for="email">Your Email</label>
-            <input type="email" name="email" class="form-control" placeholder="Your Email"/>
+              <label for="email">Your Email</label>
+              <input type="email" name="email" class="form-control" placeholder="Your Email" value="<?php echo $_POST['email']; ?>"/>
 
           </div>
 
           <div class="form-group">
 
-            <label for="comment">Your Comment</label>
-            <textarea class="form-control" name="comment"></textarea> 
+              <label for="comment">Your Comment</label>
+              <textarea class="form-control" name="comment" ><?php echo $_POST['comment']; ?></textarea> 
 
           </div>
 
