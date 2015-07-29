@@ -4,41 +4,7 @@
   <meta charset="UTF-8">
   <title>weatherApp</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <style>
-
-    html, body{
-      height:100%;
-    }
-
-    .container {
-      background-image:url("./images/background.jpg");
-      width:100%;
-      height:100%;
-      background-size:cover;
-      background-position:center;
-
-    }
-
-    #details {
-      margin-top:125px;
-      text-align:center;
-    }
-
-    #details h1 {
-      font-size:300%;
-    }
-
-    #city {
-      margin:0 auto;
-      width:75%;
-    }
-
-    p {
-      padding-top: 5px;
-      padding-bottom: 5px;
-    }
-
-  </style>
+  <link rel="stylesheet" href="./css/stylesheet.css"
 </head>
 <body>
 
@@ -56,11 +22,11 @@
 
             <div class="form-group">
 
-              <input type="text" class="form-control" placeholder="Type your city here.  ex: New York, Paris, London" name="city" id="city" />
+              <input type="text" class="form-control" placeholder="Type your city here.  ex: New York, Paris, London..." name="city" id="city" />
 
             </div>
 
-              <button class="btn btn-warning btn-lg">Shorts or Scarf?</button>
+              <button class="btn btn-sample btn-lg">Shorts or Scarf?</button>
 
 
           </form>
