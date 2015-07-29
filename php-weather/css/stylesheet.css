@@ -30,6 +30,20 @@ p {
   padding-bottom: 5px;
 }
 
+.alert {
+  margin-top:15px;
+  display:none;
+}
+
+#viewCode {
+  margin: 0 auto; 
+  color:white;
+}
+
+#viewCode a {
+  color:white;
+}
+
 .btn-sample { 
 color: #ffffff; 
 background-color: #007B6F; 

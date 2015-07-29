@@ -29,7 +29,7 @@
 
     } else {
 
-      if (mail("jennifergapay@gmail.com", "Comment from website", "Name: ".$_POST['name']."
+      if (mail("test@gmail.com", "Comment from website", "Name: ".$_POST['name']."
 
         Email: ".$_POST['email']."
 
@@ -81,6 +81,11 @@
 
     form {
       padding-bottom:20px;
+    }
+
+    #smallPrint {
+      padding-top:15px;
+      font-size:1em;
     }
 
   </style>
@@ -160,6 +165,8 @@
           </div>
 
           <input type="submit" name="submit" class="btn btn-default btn-lg" value="Submit" />
+
+          <div id="smallPrint">For testing purposes only. Say Hello! to me <a href="http://jennifergapay.com/#get-in-touch">here</a> instead.</div>
 
         </form>
 
