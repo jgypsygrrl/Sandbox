@@ -1,6 +1,12 @@
 <?php
-  
-  if ($_POST['submit']) {
+
+  session_start();
+
+  //connect to DB
+  $link = mysqli_connect("localhost", "*****", "*****", "*****");
+
+// ===== SIGN UP section =====//
+  if ($_POST['submit'])=="Sign Up" {
 
     //checks email validation
     if (!$_POST['email']) $error.="<br />Please enter your email";
@@ -14,9 +20,6 @@
     }
     if ($error) echo "There were error(s) in your signup details:".$error;
     else {
-
-      //connect to DB
-      $link = mysqli_connect("localhost", "*****", "*****", "*****");
       
       //Checks to see if email is taken
       $query= "SELECT * FROM `users` WHERE email='".mysqli_real_escape_string($link, $_POST['email'])."'";
@@ -36,20 +39,54 @@
 
             echo "You've been signed up!";
 
+            //Add session
+            $_SESSION['id']=mysqli_insert_id($link);
+
+            print_r($_SESSION);
+
+            // Redirect to logged in page
+
           }
-
-
+          
     }
+
+  }
+// ===== LOGIN section =====
+  if ($_POST['submit']=="Log In") {
+
+    $query= "SELECT * FROM `users` WHERE email='".mysqli_real_escape_string($link, $_POST['loginEmail'])."' AND password='".md5(md5($_POST['loginEmail']).$_POST['loginPassword'])."' LIMIT 1";
+
+    $result = mysqli_query($link, $query);
+
+    $row = mysqli_fetch_array($result);
+
+    print_r($row);
 
   }
 
 ?>
 
+<!-- ===== SIGN IN FORM ===== -->
 <form method="post">
 
-  <input type="name" name="name" id="name" placeholder="name"/>
-  <input type="email" name="email" id="email" placeholder="email"/>
-  <input type="password" name="password" placeholder="password"/>
+  <!-- adding value & php code will remember entered info -->
+  <input type="name" name="name" id="name" placeholder="name" value="<?php echo addslashes($_POST['name']); ?>"/>
+
+  <input type="email" name="email" id="email" placeholder="email" value="<?php echo addslashes($_POST['email']); ?>"/>
+
+  <input type="password" name="password" placeholder="password" value="<?php echo addslashes($_POST['password']); ?>"/>
+
   <input type="submit" name="submit" value="Sign Up" />
+
+</form>
+
+<!--===== LOGIN FORM ===== -->
+<form method="post">
+
+  <input type="loginEmail" name="loginEmail" id="loginEmail" placeholder="loginEmail" value="<?php echo addslashes($_POST['loginEmail']); ?>"/>
+
+  <input type="loginPassword" name="loginPassword" placeholder="loginPassword" value="<?php echo addslashes($_POST['loginPassword']); ?>"/>
+
+  <input type="submit" name="submit" value="Log In" />
 
 </form>
