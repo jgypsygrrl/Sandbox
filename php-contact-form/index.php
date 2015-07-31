@@ -94,7 +94,7 @@
 
 <!-- =============== NAVBAR ===================-->
 
-  <div class="navbar navbar-default">
+  <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <a href="http://jennifergapay.com/" class="navbar-brand">home</a>

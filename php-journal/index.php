@@ -4,7 +4,7 @@
 
     //checks email validation
     if (!$_POST['email']) $error.="Please enter your email";
-        else filter_var !($_POST['email'], FILTER_VALIDATE_EMAIL) $error.="Pleae enter a valid email address";
+        else filter_var !($_POST['email'], FILTER_VALIDATE_EMAIL) $error.="Please enter a valid email address";
 
     //checks password is more than 8 characters w/1 capital letter
     if (!_POST['password']) $error.="Please enter your password";
