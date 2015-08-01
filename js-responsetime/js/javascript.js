@@ -1,70 +1,114 @@
-function getRandomColor() {
-  var letters = '0123456789ABCDEF'.split('');
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 15)];
-  }
-
-  return color;
-}
-
-
-
-//alert(getRandomColor());
-
 var clickedTime;
 var createdTime;
 var reactionTime;
+var bestTime;
+var tries = 0;
 
-function makeBox() {
+startGame();
 
-  var time = Math.random();
+// start game
+function startGame() {
 
-  time = time * 5000;
+  document.getElementById("startButton").onclick = function() {
 
-  setTimeout(function() {
+    // random color  
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF'.split('');
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
 
-    if (Math.random() > 0.5) {
+    // make the box appear automatically 
+    function makeBox() {
 
-      document.getElementById("box").style.borderRadius = "50px";
+      var time = Math.random();
+      time = time * 5000;
 
-    } else {
+      setTimeout(function() {
 
-      document.getElementById("box").style.borderRadius = "0";
+        // make box and circle random
+        if (Math.random() > 0.5) {
+
+          document.getElementById("box").style.borderRadius = "75px";
+
+        } else {
+
+          document.getElementById("box").style.borderRadius = "0";
+
+        }
+
+        // make the box/circle appear within range 
+        var top = Math.random();
+        top = top * 200;
+
+        var left = Math.random();
+        left = left * 500;
+
+        document.getElementById("box").style.top = top + "px";
+
+        document.getElementById("box").style.left = left + "px";
+
+        document.getElementById("box").style.backgroundColor = getRandomColor();
+
+        document.getElementById("box").style.display = "block";
+
+        createdTime = Date.now();
+
+      }, time);
 
     }
 
-    var top = Math.random();
-    top = top * 300;
+    makeBox();
 
-    var left = Math.random();
-    left = left * 300;
+    // calculate the reaction time, best time & number of tries
+    document.getElementById("box").onclick = function() {
 
-    document.getElementById("box").style.top = top + "px";
+      tries++;
 
-    document.getElementById("box").style.left = left + "px";
+      clickedTime = Date.now();
 
-    document.getElementById("box").style.backgroundColor = getRandomColor();
+      reactionTime = (clickedTime - createdTime) / 1000;
 
-    document.getElementById("box").style.display = "block";
+      console.log(reactionTime);
 
-    createdTime = Date.now();
+      bestTime = (bestTime == null) ? reactionTime : Math.min(reactionTime, bestTime);
 
-  }, time);
+      document.getElementById("bestTime").innerHTML = bestTime;
+
+      document.getElementById("time").innerHTML = reactionTime;
+
+      document.getElementById("clicks").innerHTML = tries;
+
+      this.style.display = "none";
+
+      // limit number of tries 
+      if (tries < 5) {
+
+        makeBox();
+
+      } else {
+
+        document.getElementById("clicks").innerHTML = 'Game over!</br> Your best time was ' + bestTime + 's.</br> Click Start to try again!';
+        document.getElementById("time").innerHTML = '0';
+        document.getElementById("bestTime").innerHTML = '0';
+
+        function resetScore() {
+
+          reactionTime = 0;
+          bestTime = null;
+          tries = 0;
+
+        }
+        resetScore();
+      }
+
+    }
+
+  }
 
 }
 
-document.getElementById("box").onclick = function() {
-
-  clickedTime = Date.now();
-
-  reactionTime = (clickedTime - createdTime) / 1000;
-
-  document.getElementById("time").innerHTML = reactionTime;
-
-  this.style.display = "none";
-
-  makeBox();
-}
-
-makeBox();
+debugger;
