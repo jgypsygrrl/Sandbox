@@ -4,9 +4,8 @@
 
   //connect to DB
   $link = mysqli_connect("localhost", "*****", "*****", "*****");
-
-// ===== SIGN UP section =====//
-  if ($_POST['submit'])=="Sign Up" {
+  
+  if ($_POST['submit']=="Sign Up") {
 
     //checks email validation
     if (!$_POST['email']) $error.="<br />Please enter your email";
@@ -51,7 +50,7 @@
     }
 
   }
-// ===== LOGIN section =====
+
   if ($_POST['submit']=="Log In") {
 
     $query= "SELECT * FROM `users` WHERE email='".mysqli_real_escape_string($link, $_POST['loginEmail'])."' AND password='".md5(md5($_POST['loginEmail']).$_POST['loginPassword'])."' LIMIT 1";
@@ -60,7 +59,16 @@
 
     $row = mysqli_fetch_array($result);
 
-    print_r($row);
+    if ($row) {
+
+      $_SESSION['id']=$row['id'];
+
+      //Redirect to logged in page
+    } else {
+
+      echo "We could not find a user with that email and password.  Please try again.";
+
+    }
 
   }
 
@@ -83,9 +91,9 @@
 <!--===== LOGIN FORM ===== -->
 <form method="post">
 
-  <input type="loginEmail" name="loginEmail" id="loginEmail" placeholder="loginEmail" value="<?php echo addslashes($_POST['loginEmail']); ?>"/>
+  <input type="loginEmail" name="loginEmail" id="loginEmail" placeholder="your email" value="<?php echo addslashes($_POST['loginEmail']); ?>"/>
 
-  <input type="loginPassword" name="loginPassword" placeholder="loginPassword" value="<?php echo addslashes($_POST['loginPassword']); ?>"/>
+  <input type="loginPassword" name="loginPassword" placeholder="your password" value="<?php echo addslashes($_POST['loginPassword']); ?>"/>
 
   <input type="submit" name="submit" value="Log In" />
 

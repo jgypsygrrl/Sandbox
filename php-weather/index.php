@@ -28,7 +28,7 @@
 
               <button id="findWeather" class="btn btn-sample btn-lg">Shorts or Scarf?</button>
 
-               <p id="viewCode"><a href="https://github.com/jgypsygrrl/Sandbox/tree/master/php-weather">View Code on Github</a> | <a href="http://jennifergapay.com/sandbox/">Back to Sandbox</a></p>
+               <p id="viewCode"><a href="https://github.com/jgypsygrrl/Sandbox/tree/master/php-weather" target"_blank">View Code on Github</a> | <a href="http://jennifergapay.com/sandbox/">Back to Sandbox</a></p>
 
           </form>
 
