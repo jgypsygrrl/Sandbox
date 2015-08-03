@@ -4,6 +4,10 @@
   font-size: 2em;
 }
 
+.navbar-default .navbar-nav>li>a {
+  color: #d35400;
+}
+
 .topContainer {
   background-image:url("../images/topImage.jpg");
   height:400px;
@@ -15,6 +19,10 @@
 #topRow {
   margin-top:125px;
   text-align: center;
+}
+
+#topMain {
+  margin-top: 70px;
 }
 
 #topRow h1 {
