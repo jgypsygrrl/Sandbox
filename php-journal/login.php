@@ -2,6 +2,12 @@
 
   session_start();
 
+  if ($_GET["logout"]==1 AND $_SESSION['id']) {session_destroy();
+
+    $message="You have been logged out.";
+
+  }
+
   include("connection.php");
   
   if ($_POST['submit']=="Sign Up") {
@@ -40,9 +46,7 @@
             //Add session
             $_SESSION['id']=mysqli_insert_id($link);
 
-            print_r($_SESSION);
-
-            // Redirect to logged in page
+            header("Location:main.php");
 
           }
           
@@ -62,9 +66,8 @@
 
       $_SESSION['id']=$row['id'];
 
-      print_r($_SESSION);
+      header("Location:main.php");
 
-      //Redirect to logged in page
     } else {
 
       $error = "We could not find a user with that email and password.  Please try again.";

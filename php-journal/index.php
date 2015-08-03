@@ -59,6 +59,11 @@
 
           }
 
+          if ($message) {
+
+            echo '<div class="alert alert-success">'.addslashes($message).'</div>';
+
+          }
 
         ?>
 

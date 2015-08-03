@@ -1,3 +1,19 @@
+<?php
+
+  session_start();
+
+  include("connection.php");
+
+  $query="SELECT entries FROM users WHERE id='".$_SESSION['id']."' LIMIT 1";
+
+  $result = mysqli_query($link, $query);
+
+  $row = mysqli_fetch_array($result);
+
+  $entries = $row['entries'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +37,7 @@
         <!--- LOGOUT -->       
         <div class="pull-right">
           <ul class="navbar-nav nav">
-            <li><a href="">Log Out</a></li>
+            <li><a href="index.php?logout=1">Log Out</a></li>
           </ul>
         </div>
 
@@ -36,7 +52,7 @@
      
         <!-- ===== Journal ===== -->
 
-        <textarea class="form-control"></textarea>
+        <textarea class="form-control"><?php echo $entries; ?></textarea>
 
         
         
@@ -54,6 +70,9 @@
     //changed to min-height adjust to smaller devices
     $(".contentContainer").css("min-height",$(window).height());
     $("textarea").css("height",$(window).height()-100);
+    $("textarea").keyup(function() {
+        $.post("updatejournal.php", {entries:$("textarea").val()} );
+    });
   </script>
 
 </body>
