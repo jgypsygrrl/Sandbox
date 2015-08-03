@@ -2,44 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>phpJournal | Jennifer's Sandbox</title>
+  <title>phpJournal </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <? include("login.php"); ?>
-  <style>
-
-
-  .navbar-brand {
-    font-size: 1.8em;
-  }
-
-  .topContainer {
-    background-image:url("./images/topImage.jpg");
-    height:400px;
-    width:100%;
-    background-size:cover;
-  }
-
-  #topRow {
-    margin-top:125px;
-    text-align: center;
-  }
-
-  #topRow h1 {
-    font-size:300%;
-  }
-
-  .bold {
-    font-weight:bold;
-  }
-
-  .marginTop {
-    margin-top:30px;
-  }
-
-
-  </style>
-  
+  <link rel="stylesheet" href="css/custom.css" >
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse">
   
@@ -54,9 +21,9 @@
           </button>
           <a href="#" class="navbar-brand">myJournal</a>
         </div>
-        
+ 
+        <!--- start SIGNIN right justified -->       
         <div class="collapse navbar-collapse">
-          <!--- start SIGNIN right justified -->
           <form class="navbar-form navbar-right" method="post">
             <div class="form-group">
               <input type="email" name="loginEmail" placeholder="Email" class="form-control" value="<?php echo addslashes($_POST['loginEmail']); ?>"/>
@@ -64,13 +31,13 @@
             <div class="form-group">
               <input type="password" name="loginPassword" placeholder="Password" class="form-control" value="<?php echo addslashes($_POST['loginPassword']); ?>" />
             </div>
-            <input type="submit" name="submit"class="btn-success" value="Log In" />
+            <input type="submit" name="submit"class="btn-sample" value="Log In" />
           </form>
         </div>
       </div>
     </div>
 
-<!-- ========== start HOME ========== -->
+<!-- ========== end NAV ========== -->
 
     <div class="container contentContainer topContainer" id="home">
 
@@ -82,9 +49,20 @@
 
         <h1 class="marginTop">myJournal</h1>
 
-        <p class="lead">Your own private Journal</p>
+        <p class="lead">Your own digital Journal</p>
 
-        <p class="bold marginTop">Interested in writing your own? Sign up below!</p>
+        <?php
+
+          if ($error) {
+
+            echo '<div class="alert alert-danger">'.addslashes($error).'</div>';
+
+          }
+
+
+        ?>
+
+        <p class="bold marginTop">Interested? Sign up below!</p>
 
           <form class="marginTop" method="post">
 
@@ -102,7 +80,7 @@
               <input type="password" name="password" class="form-control" placeholder="Add password" value="<?php echo addslashes($_POST['password']); ?>"/>
             </div>
 
-            <input type="submit" class="btn btn-success btn-lg marginTop" name="submit" value="Sign Up"  />
+            <input type="submit" class="btn btn-sample btn-lg marginTop" name="submit" value="Sign Up"  />
 
           </form>
         

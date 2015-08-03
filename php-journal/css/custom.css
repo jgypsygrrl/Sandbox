@@ -1,0 +1,76 @@
+
+.navbar-default .navbar-brand {
+  color: #d35400;
+  font-size: 2em;
+}
+
+.topContainer {
+  background-image:url("../images/topImage.jpg");
+  height:400px;
+  width:100%;
+  background-size:cover;
+  color: #d35400;
+}
+
+#topRow {
+  margin-top:125px;
+  text-align: center;
+}
+
+#topRow h1 {
+  font-size:300%;
+}
+
+.bold {
+  font-weight:bold;
+}
+
+.marginTop {
+  margin-top:30px;
+}
+
+.btn-sample { 
+  color: #ffffff; 
+  background-color: #D35400; 
+  border-color: #C0392B; 
+} 
+ 
+.btn-sample:hover, 
+.btn-sample:focus, 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  color: #ffffff; 
+  background-color: #e67e22; 
+  border-color: #C0392B; 
+} 
+ 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  background-image: none; 
+} 
+ 
+.btn-sample.disabled, 
+.btn-sample[disabled], 
+fieldset[disabled] .btn-sample, 
+.btn-sample.disabled:hover, 
+.btn-sample[disabled]:hover, 
+fieldset[disabled] .btn-sample:hover, 
+.btn-sample.disabled:focus, 
+.btn-sample[disabled]:focus, 
+fieldset[disabled] .btn-sample:focus, 
+.btn-sample.disabled:active, 
+.btn-sample[disabled]:active, 
+fieldset[disabled] .btn-sample:active, 
+.btn-sample.disabled.active, 
+.btn-sample[disabled].active, 
+fieldset[disabled] .btn-sample.active { 
+  background-color: #D35400; 
+  border-color: #C0392B; 
+} 
+ 
+.btn-sample .badge { 
+  color: #D35400; 
+  background-color: #ffffff; 
+}

@@ -16,7 +16,7 @@
       if (strlen($_POST['password'])<8) $error.="<br />Please enter a password with at least 8 characters";
       if (!preg_match('`[A-Z]`', $_POST['password'])) $error.="<br />Please include at least one capital letter in your password.";
     }
-    if ($error) echo "There were error(s) in your signup details:".$error;
+    if ($error) $error = "There were error(s) in your signup details:".$error;
     else {
       
       //Checks to see if email is taken
@@ -27,7 +27,7 @@
 
         $results = mysqli_num_rows($result);
 
-        if ($results) echo "That email address is already registered.  Do you want to login?";
+        if ($results) $error = "That email address is already registered.  Do you want to login?";
 
           else {
 
@@ -67,7 +67,7 @@
       //Redirect to logged in page
     } else {
 
-      echo "We could not find a user with that email and password.  Please try again.";
+      $error = "We could not find a user with that email and password.  Please try again.";
 
     }
 
