@@ -87,6 +87,8 @@
 
             <input type="submit" class="btn btn-sample btn-lg marginTop" name="submit" value="Sign Up"  />
 
+            <p id="viewCode"><a href="https://github.com/jgypsygrrl/Sandbox/tree/master/php-journal" target"_blank">View Code on Github</a> </p>
+
           </form>
         
       </div>
