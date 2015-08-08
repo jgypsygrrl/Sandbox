@@ -9,8 +9,20 @@
   <link href="../css/custom.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
   <style>
-    #todos {
+    #toAdd {
       width: 300px;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    .todoList {
+      margin-left: 25px;
+    }
+
+    .container {
+      margin-left: 200px;
     }
   </style>
 </head>
@@ -47,12 +59,12 @@
 
 <!-- =============== HEADER ===================-->
   <div class="page-header text-center">
-    <h1>Things to do</br><small>A little practice with jQuery.</small> <a class="btn btn-default" href="#" target="_blank" role="button">View code &raquo;</a></h1>
+    <h1>Things to do</br><small>A little practice with jQuery &amp Bootstrap.</small> <a class="btn btn-default" href="https://github.com/jgypsygrrl/Sandbox/tree/master/jQuery-todo" target="_blank" role="button">View code &raquo;</a></h1>
   </div>
 
 <!-- =============== CONTAINER =============== -->
 
-  <div class="container text-center">
+  <div class="container text-left">
     <div class="col-md-6 col-md-offset-3">
 
       <h2>To Do</h2>
@@ -60,14 +72,17 @@
       <form class="form-inline">
         <div class="form-group">
           <label class="sr-only" for="todos">To Dos</label>
-          <input id="todos" type="text" class="form-control" name="checkListItem" placeholder="Add todos here">
+          <input id="toAdd" type="text" class="form-control" name="checkListItem" placeholder="Add todos here">
         </div>
       
-        <div id="button" class="btn btn-default">Add</div>
+        <div id="button" class="btn btn-default" aria-label="Left Align">
+          <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+          Add</div>
+          
         <br/>
       </form>
 
-      <div class="yourList"></div>
+      <div class="todoList"></div>
 
     </div>
   </div>
@@ -76,6 +91,7 @@
 <!-- =============== SCRIPTS =============== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="script/custom.js"></script>
 
 </body>
 </html>
