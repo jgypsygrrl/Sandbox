@@ -12,19 +12,29 @@
 
     <div class="row">
 
-      <div class="col-md-6 col-md-offset-3" id="details">
+      <div class="col-md-6 col-md-offset-3 text-center" id="whiteOverlay">
 
         <h1 class="title">zipFind</h1>
 
-          <p class="lead"></p>
+          <p class="lead">Enter an address to find the zip code.</p>
 
           <form>
 
-            
+            <div class="form-group">
+
+              <input type="text" class="form-control" name="address" id="address" placeholder="e.g. 350 5th Avenue, New York"/>
+
+            </div>
+
+              <button id="findButton" class="btn btn-sample btn-lg">Find the Zip Code</button>
+
+               <p id="viewCode"><a href="https://github.com/jgypsygrrl/Sandbox/tree/master/API-zipFind" target"_blank">View Code on Github</a> | <a href="http://jennifergapay.com/sandblog/">Back to Sandblog</a></p>
 
           </form>
 
-        <div>
+        <div id="success" class="alert alert-success" >Success!</div>
+        <div id="fail" class="alert alert-warning">Unfortunately there was an error.  Please retype your address.</div>
+        <div id="noZip" class="alert alert-warning">Please enter an address.</div>
 
       </div>
 
@@ -35,5 +45,35 @@
 <!-- ========== SCRIPTS ========== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script>
+  $("#findButton").click(function(event) {
+
+    event.preventDefault();
+        
+    var result=0;
+
+    $.ajax({
+        type: "GET",
+        url: "https://maps.googleapis.com/maps/api/geocode/xml?address="+encodeURIComponent($('#address').val())+"&key=********************************", 
+        datatype: "xml",
+        success: processXML
+      });
+
+      function processXML(xml) {
+
+        $(xml).find("address_component").each(function() {
+
+            if($(this).find("type").text() == "postal_code") {
+
+                $("#success").html("The zip code is "+$(this).find('long_name').text()).fadeIn();
+
+            }
+
+        });
+
+     };
+ });
+
+  </script>
 </body>
 </html>
