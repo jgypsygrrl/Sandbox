@@ -1,5 +1,6 @@
 html, body{
   height:100%;
+  color: white;
 }
 
 .container {
@@ -13,15 +14,9 @@ html, body{
 
 #whiteOverlay {
   margin-top:125px;
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(20,20,20,.6);
   padding:20px;
   border-radius:20px; 
-}
-
-
-#city {
-  margin:0 auto;
-  width:75%;
 }
 
 p {
@@ -29,57 +24,16 @@ p {
   padding-bottom: 5px;
 }
 
+.button {
+  margin-right: 5px;
+}
+
+
 .alert {
   margin-top:15px;
   display:none;
 }
 
 #viewCode a {
-  color:black;
-}
-
-.btn-sample { 
-color: #ffffff; 
-background-color: #007B6F; 
-border-color: #4E6655; 
-} 
-
-.btn-sample:hover, 
-.btn-sample:focus, 
-.btn-sample:active, 
-.btn-sample.active, 
-.open .dropdown-toggle.btn-sample { 
-  color: #ffffff; 
-  background-color: #6abb9e; 
-  border-color: #4E6655; 
-} 
- 
-.btn-sample:active, 
-.btn-sample.active, 
-.open .dropdown-toggle.btn-sample { 
-  background-image: none; 
-} 
- 
-.btn-sample.disabled, 
-.btn-sample[disabled], 
-fieldset[disabled] .btn-sample, 
-.btn-sample.disabled:hover, 
-.btn-sample[disabled]:hover, 
-fieldset[disabled] .btn-sample:hover, 
-.btn-sample.disabled:focus, 
-.btn-sample[disabled]:focus, 
-fieldset[disabled] .btn-sample:focus, 
-.btn-sample.disabled:active, 
-.btn-sample[disabled]:active, 
-fieldset[disabled] .btn-sample:active, 
-.btn-sample.disabled.active, 
-.btn-sample[disabled].active, 
-fieldset[disabled] .btn-sample.active { 
-  background-color: #007B6F; 
-  border-color: #4E6655; 
-} 
- 
-.btn-sample .badge { 
-  color: #007B6F; 
-  background-color: #ffffff; 
+  color:white;
 }
