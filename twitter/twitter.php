@@ -9,9 +9,14 @@
   $accesstoken="*****************************";
   $accesssecret="*************************";
 
-  $tweets = 
-  $connection->get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2");
+  $connection = new TwitterOAuth($apikey, $apisecret, $accesstoken, $accesssecret);
 
-  print_r($tweets);
+  $tweets = 
+  $connection->get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=kellabyte&count=10");
+
+  foreach($tweets as $tweet) {
+    echo $tweet->text;
+    echo "<br />";
+  }
 
 ?>
