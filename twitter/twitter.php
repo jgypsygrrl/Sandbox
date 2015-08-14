@@ -12,7 +12,7 @@
   $connection = new TwitterOAuth($apikey, $apisecret, $accesstoken, $accesssecret);
 
 //Grab 50 tweets with a favorite count of 2 or more.
- 
+
     $response = 
     $connection->get("https://api.twitter.com/1.1/statuses/home_timeline.json?count=50");
 
@@ -20,9 +20,16 @@
     foreach ($response as $tweet) {
 
     $favorites=$tweet->favorite_count;
-      if ($favorites>=2) echo $tweet->text;
-    }
 
+      if ($favorites>=2)  {
+
+        $embed =
+        $connection->get("https://api.twitter.com/1.1/statuses/oembed.json?id=".$tweet->id);
+
+        echo $embed->html;
+      }
+
+    }
 
 
 //POST a tweet 
