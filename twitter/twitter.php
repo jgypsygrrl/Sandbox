@@ -57,7 +57,7 @@
 <!-- =============== HEADER ===================-->
   <div class="page-header text-center">
     <h1>twitterFilter - A little experiment with twitter API.</br>
-     <small>This filters your feed and will only show tweets with over 20 favorites.</small> <a class="btn btn-default" href="https://github.com/jgypsygrrl/Sandbox/tree/master/js-fingers" target="blank" role="button">View Code &raquo;</a></h1>
+     <small>This filters your feed and will only show tweets with over 20 favorites.</small> <a class="btn btn-default" href="https://github.com/jgypsygrrl/Sandbox/tree/master/twitter" target="blank" role="button">View Code &raquo;</a></h1>
   </div>
   <!-- end header -->
 
