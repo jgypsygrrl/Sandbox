@@ -58,7 +58,8 @@
         type: "GET",
         url: "https://maps.googleapis.com/maps/api/geocode/xml?address="+encodeURIComponent($('#address').val())+"&key=********************************", 
         datatype: "xml",
-        success: processXML
+        success: processXML,
+        error:error
       });
 
       function error() {
